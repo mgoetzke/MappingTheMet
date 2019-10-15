@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Metropolitan Museum of Art's collection spans media, millenia, and locations. Wandering through galleries and departments reveals the wide range of artworks but I'm interested in using The Metropolitan Museum of Art Collection API to delve deeper into the origins of its pieces. Particularly, I'd like to examine the country of origin of artworks by medium, by year, and whether the piece of art is designated a "highlight".
+The Metropolitan Museum of Art's collection is world-class. Is it worldly? I plan to use The Metropolitan Museum of Art Collection API to delve deeper into the origins of its pieces. Particularly, I'd like to examine the country of origin of artworks by medium, by year, and whether the piece of art is designated a "highlight" or even on display.
 
 ## Functionality & MVPs
 
@@ -48,4 +48,3 @@ Day 3
 ## Bonus Features
 
 - Exploration by year of acquisition
-- Exploration by gender in addition to country of origin (will require additional dataset)
