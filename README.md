@@ -37,10 +37,12 @@ Day 1
 - 2 hrs: API familiarization and assessment of required preprocessing
 - 2 hrs: Project setup including Webpack
 - GOAL: Learn enough D3 and API to get something rendered
+
 Day 2
 - 4 hrs: API familiarization
 - 4 hrs: Data preprocessing and API requests written, tested, working
 - GOAL: Get API requests connected correctly
+
 Day 3
 - 4 hrs: Render API return
 - 4 hrs: User input fires off API requests and updates render
