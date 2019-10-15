@@ -8,10 +8,10 @@ The Metropolitan Museum of Art's collection is world-class. Is it worldly? I pla
 
 MetArt users are are able to:
 
-- Explore the museum's collection by country of origin
-- Explore the museum's collection by medium
-- Explore the museum's collection by year
-- Explore the museum's collection by 'highlight' designation
+- See a broad overview of the museums's collection by country of origin
+- Examine the museum's collection by country of origin to explore medium and other details
+- Explore the geographic distribution of the museum's collection by year of creation
+- Filter the museum's collection by 'highlight' and 'on-view' designation
 
 ## Data & APIs
 
