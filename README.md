@@ -18,7 +18,7 @@ MetArt users are are able to:
 Artwork information is available for free through The Metropolitan Museum of Art Collection API which provides information on the museum's 450,000 artworks.
 
 ## Wireframe
-
+Mapping the Met will be consist of a single page that allows users to view a world map (a) of data for all countries or filter by a particular country (b) to get country-specific information (d). User can also use a sliding timescale to adjust information on global distribution of artworks (e). A sidebar (c) and footer (f) will contain author and dataset information.
 ![Wireframe](assets/images/wireframe.png)
 
 ## Design
