@@ -3,14 +3,14 @@ const app = express();
 const path = require("path");
 const fetch = require("node-fetch");
 const PORT = process.env.PORT || 8080; // process.env accesses heroku's environment variables
-const Axios = require('axios');
+const Axios = require("axios");
 app.use(express.static("public"));
 
 app.get("/", (request, res) => {
-  res.sendFile(path.join(__dirname, "./public/index.html"));
+  res.sendFile(path.join(__dirname, "./public/dist/index.html"));
 });
 
-// create route to get all objects by culture
+// create route to get all objects for one country
 app.get("/objects/:location", (request, response) => {
   // make api call using fetch
   fetch(
@@ -26,7 +26,7 @@ app.get("/objects/:location", (request, response) => {
     });
 });
 
-// create route to get all objects by all
+// create route to get total objects for all countries
 app.get("/objects/", (request, response) => {
   // make api call using fetch
   let countries = [
@@ -240,19 +240,19 @@ app.get("/objects/", (request, response) => {
   let promises = countries.map(country => {
     return fetch(
       `https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${country}&q=""`
-    ).then(response => {
-      return response.text();
-    })
-    .then(body => {
-      let results = JSON.parse(body);
-      return {country: country, total: results.total};
-    });
+    )
+      .then(response => {
+        return response.text();
+      })
+      .then(body => {
+        let results = JSON.parse(body);
+        return { country: country, total: results.total };
+      });
   });
   Promise.all(promises).then(data => {
     console.log("First handler", data);
     response.send(data);
   });
-
 });
 
 app.listen(PORT, () => {

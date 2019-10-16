@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  background-color: #2a2c39;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 200;
+  font-size: 17px;
+}
+#map-holder {
+  width: 100vw;
+  height: 100vh;
+}
+svg rect {
+  fill: #2a2c39; /* map background colour */
+}
+.country {
+  fill: #d0d0d0; /* country colour */
+  stroke: #2a2c39; /* country border colour */
+  stroke-width: 1; /* country border width */
+}
+.country-on {
+  fill: #4b5358; /* highlight colour for selected country */
+}
+.countryLabel {
+  display: none; /* hide all country labels by default */
+}
+.countryName {
+  fill: #fffaff; /* country label text colour */
+}
+.countryLabelBg {
+  fill: #30bced; /* country label background colour */
+}
