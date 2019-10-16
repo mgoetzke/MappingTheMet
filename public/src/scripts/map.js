@@ -6,6 +6,13 @@ import * as d3 from "d3";
 import * as topojson from "topojson";
 
 export function renderMap(allCountryData) {
+  let config = {
+    speed: 0.005,
+    verticalTilt: 0,
+    horizontalTilt: 0
+  };
+  let stopRotation = false;
+  let lastElapse = 0;
   let fullData = allCountryData;
   let test = 100;
   function colorCountry() {
@@ -24,7 +31,7 @@ export function renderMap(allCountryData) {
   var height = 500;
 
   var projection = d3
-    .geoMercator()
+    .geoOrthographic()
     .scale(200)
     .translate([width / 2.2, height / 1.5]);
   var plane_path = d3.geoPath().projection(projection);
@@ -48,5 +55,11 @@ export function renderMap(allCountryData) {
       .style("fill", function(d) {
         return color(colorById[d.id]);
       });
+  });
+
+  d3.timer(function (elapsed) {
+    projection.rotate([config.speed * elapsed - 120, config.verticalTilt, config.horizontalTilt]);
+    svg.selectAll("path").attr("d", path);
+    drawMarkers();
   });
 }
