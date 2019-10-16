@@ -236,7 +236,7 @@ app.get("/objects/", (request, response) => {
     "Zambia",
     "Zimbabwe"
   ];
-  console.log("hi");
+  console.log("Fetching data for all countries");
   let promises = countries.map(country => {
     return fetch(
       `https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${country}&q=""`
@@ -250,11 +250,10 @@ app.get("/objects/", (request, response) => {
   });
   Promise.all(promises).then(data => {
     console.log("First handler", data);
+    response.send(data);
   });
 
 });
-
-
 
 app.listen(PORT, () => {
   console.log(__dirname);
