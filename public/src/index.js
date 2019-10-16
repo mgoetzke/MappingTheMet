@@ -4,8 +4,12 @@ const axios = require("axios");
 
 window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("app").innerText = "Hello World!";
-  renderMap();
+  // axios
+  //   .get("/objects")
+  //   .then(allCountryData => console.log(allCountryData))
+  //   .then(renderMap);
   // axios.get("/objects").then(response => {
   //   console.log(response);
   // });
+  renderMap();
 });
