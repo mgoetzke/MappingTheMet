@@ -283,10 +283,6 @@ app.get("/objects/", (request, response) => {
       name: "Dominican Rep."
     },
     {
-      id: "588",
-      name: "East and West Pakistan"
-    },
-    {
       id: "218",
       name: "Ecuador"
     },
@@ -314,10 +310,7 @@ app.get("/objects/", (request, response) => {
       id: "231",
       name: "Ethiopia"
     },
-    {
-      id: "97",
-      name: "EU-28"
-    },
+
     {
       id: "234",
       name: "Faeroe Isds"
@@ -334,70 +327,7 @@ app.get("/objects/", (request, response) => {
       id: "246",
       name: "Finland"
     },
-    {
-      id: "886",
-      name: "Fmr Arab Rep. of Yemen"
-    },
-    {
-      id: "278",
-      name: "Fmr Dem. Rep. of Germany"
-    },
-    {
-      id: "866",
-      name: "Fmr Dem. Rep. of Vietnam"
-    },
-    {
-      id: "720",
-      name: "Fmr Dem. Yemen"
-    },
-    {
-      id: "230",
-      name: "Fmr Ethiopia"
-    },
-    {
-      id: "280",
-      name: "Fmr Fed. Rep. of Germany"
-    },
-    {
-      id: "582",
-      name: "Fmr Pacific Isds"
-    },
-    {
-      id: "590",
-      name: "Fmr Panama, excl.Canal Zone"
-    },
-    {
-      id: "592",
-      name: "Fmr Panama-Canal-Zone"
-    },
-    {
-      id: "868",
-      name: "Fmr Rep. of Vietnam"
-    },
-    {
-      id: "717",
-      name: "Fmr Rhodesia Nyas"
-    },
-    {
-      id: "736",
-      name: "Fmr Sudan"
-    },
-    {
-      id: "835",
-      name: "Fmr Tanganyika"
-    },
-    {
-      id: "810",
-      name: "Fmr USSR"
-    },
-    {
-      id: "890",
-      name: "Fmr Yugoslavia"
-    },
-    {
-      id: "836",
-      name: "Fmr Zanzibar and Pemba Isd"
-    },
+
     {
       id: "251",
       name: "France"
@@ -495,10 +425,6 @@ app.get("/objects/", (request, response) => {
       name: "India"
     },
     {
-      id: "356",
-      name: "India, excl. Sikkim"
-    },
-    {
       id: "360",
       name: "Indonesia"
     },
@@ -556,7 +482,7 @@ app.get("/objects/", (request, response) => {
     },
     {
       id: "418",
-      name: "Lao People's Dem. Rep."
+      name: "Laos"
     },
     {
       id: "428",
@@ -693,356 +619,350 @@ app.get("/objects/", (request, response) => {
     {
       id: "558",
       name: "Nicaragua"
-    },
-    {
-      id: "562",
-      name: "Niger"
-    },
-    {
-      id: "566",
-      name: "Nigeria"
-    },
-    {
-      id: "579",
-      name: "Norway"
-    },
-    {
-      id: "512",
-      name: "Oman"
-    },
-    {
-      id: "490",
-      name: "Other Asia, nes"
-    },
-    {
-      id: "586",
-      name: "Pakistan"
-    },
-    {
-      id: "585",
-      name: "Palau"
-    },
-    {
-      id: "591",
-      name: "Panama"
-    },
-    {
-      id: "598",
-      name: "Papua New Guinea"
-    },
-    {
-      id: "600",
-      name: "Paraguay"
-    },
-    {
-      id: "459",
-      name: "Peninsula Malaysia"
-    },
-    {
-      id: "604",
-      name: "Peru"
-    },
-    {
-      id: "608",
-      name: "Philippines"
-    },
-    {
-      id: "616",
-      name: "Poland"
-    },
-    {
-      id: "620",
-      name: "Portugal"
-    },
-    {
-      id: "634",
-      name: "Qatar"
-    },
-    {
-      id: "410",
-      name: "Rep. of Korea"
-    },
-    {
-      id: "498",
-      name: "Rep. of Moldova"
-    },
-    {
-      id: "638",
-      name: "Réunion"
-    },
-    {
-      id: "642",
-      name: "Romania"
-    },
-    {
-      id: "643",
-      name: "Russian Federation"
-    },
-    {
-      id: "646",
-      name: "Rwanda"
-    },
-    {
-      id: "647",
-      name: "Ryukyu Isd"
-    },
-    {
-      id: "461",
-      name: "Sabah"
-    },
-    {
-      id: "654",
-      name: "Saint Helena"
-    },
-    {
-      id: "659",
-      name: "Saint Kitts and Nevis"
-    },
-    {
-      id: "658",
-      name: "Saint Kitts, Nevis and Anguilla"
-    },
-    {
-      id: "662",
-      name: "Saint Lucia"
-    },
-    {
-      id: "534",
-      name: "Saint Maarten"
-    },
-    {
-      id: "666",
-      name: "Saint Pierre and Miquelon"
-    },
-    {
-      id: "670",
-      name: "Saint Vincent and the Grenadines"
-    },
-    {
-      id: "882",
-      name: "Samoa"
-    },
-    {
-      id: "674",
-      name: "San Marino"
-    },
-    {
-      id: "678",
-      name: "Sao Tome and Principe"
-    },
-    {
-      id: "457",
-      name: "Sarawak"
-    },
-    {
-      id: "682",
-      name: "Saudi Arabia"
-    },
-    {
-      id: "686",
-      name: "Senegal"
-    },
-    {
-      id: "688",
-      name: "Serbia"
-    },
-    {
-      id: "891",
-      name: "Serbia and Montenegro"
-    },
-    {
-      id: "690",
-      name: "Seychelles"
-    },
-    {
-      id: "694",
-      name: "Sierra Leone"
-    },
-    {
-      id: "702",
-      name: "Singapore"
-    },
-    {
-      id: "703",
-      name: "Slovakia"
-    },
-    {
-      id: "705",
-      name: "Slovenia"
-    },
-    {
-      id: "711",
-      name: "So. African Customs Union"
-    },
-    {
-      id: "90",
-      name: "Solomon Isds"
-    },
-    {
-      id: "706",
-      name: "Somalia"
-    },
-    {
-      id: "710",
-      name: "South Africa"
-    },
-    {
-      id: "728",
-      name: "South Sudan"
-    },
-    {
-      id: "724",
-      name: "Spain"
-    },
-    {
-      id: "144",
-      name: "Sri Lanka"
-    },
-    {
-      id: "275",
-      name: "State of Palestine"
-    },
-    {
-      id: "729",
-      name: "Sudan"
-    },
-    {
-      id: "740",
-      name: "Suriname"
-    },
-    {
-      id: "748",
-      name: "Swaziland"
-    },
-    {
-      id: "752",
-      name: "Sweden"
-    },
-    {
-      id: "757",
-      name: "Switzerland"
-    },
-    {
-      id: "760",
-      name: "Syria"
-    },
-    {
-      id: "762",
-      name: "Tajikistan"
-    },
-    {
-      id: "807",
-      name: "TFYR of Macedonia"
-    },
-    {
-      id: "764",
-      name: "Thailand"
-    },
-    {
-      id: "626",
-      name: "Timor-Leste"
-    },
-    {
-      id: "768",
-      name: "Togo"
-    },
-    {
-      id: "772",
-      name: "Tokelau"
-    },
-    {
-      id: "776",
-      name: "Tonga"
-    },
-    {
-      id: "780",
-      name: "Trinidad and Tobago"
-    },
-    {
-      id: "788",
-      name: "Tunisia"
-    },
-    {
-      id: "792",
-      name: "Turkey"
-    },
-    {
-      id: "795",
-      name: "Turkmenistan"
-    },
-    {
-      id: "796",
-      name: "Turks and Caicos Isds"
-    },
-    {
-      id: "798",
-      name: "Tuvalu"
-    },
-    {
-      id: "800",
-      name: "Uganda"
-    },
-    {
-      id: "804",
-      name: "Ukraine"
-    },
-    {
-      id: "784",
-      name: "United Arab Emirates"
-    },
-    {
-      id: "826",
-      name: "United Kingdom"
-    },
-    {
-      id: "834",
-      name: "United Rep. of Tanzania"
-    },
-    {
-      id: "858",
-      name: "Uruguay"
-    },
-    {
-      id: "850",
-      name: "US Virgin Isds"
-    },
-    {
-      id: "842",
-      name: "USA"
-    },
-
-    {
-      id: "860",
-      name: "Uzbekistan"
-    },
-    {
-      id: "548",
-      name: "Vanuatu"
-    },
-    {
-      id: "862",
-      name: "Venezuela"
-    },
-    {
-      id: "704",
-      name: "Vietnam"
-    },
-    {
-      id: "876",
-      name: "Wallis and Futuna Isds"
-    },
-    {
-      id: "887",
-      name: "Yemen"
-    },
-    {
-      id: "894",
-      name: "Zambia"
-    },
-    {
-      id: "716",
-      name: "Zimbabwe"
     }
+    // {
+    //   id: "562",
+    //   name: "Niger"
+    // },
+    // {
+    //   id: "566",
+    //   name: "Nigeria"
+    // },
+    // {
+    //   id: "579",
+    //   name: "Norway"
+    // },
+    // {
+    //   id: "512",
+    //   name: "Oman"
+    // },
+    // {
+    //   id: "490",
+    //   name: "Other Asia, nes"
+    // },
+    // {
+    //   id: "586",
+    //   name: "Pakistan"
+    // },
+    // {
+    //   id: "585",
+    //   name: "Palau"
+    // },
+    // {
+    //   id: "591",
+    //   name: "Panama"
+    // },
+    // {
+    //   id: "598",
+    //   name: "Papua New Guinea"
+    // },
+    // {
+    //   id: "600",
+    //   name: "Paraguay"
+    // },
+    // {
+    //   id: "459",
+    //   name: "Peninsula Malaysia"
+    // },
+    // {
+    //   id: "604",
+    //   name: "Peru"
+    // },
+    // {
+    //   id: "608",
+    //   name: "Philippines"
+    // },
+    // {
+    //   id: "616",
+    //   name: "Poland"
+    // },
+    // {
+    //   id: "620",
+    //   name: "Portugal"
+    // },
+    // {
+    //   id: "634",
+    //   name: "Qatar"
+    // },
+    // {
+    //   id: "410",
+    //   name: "Rep. of Korea"
+    // },
+    // {
+    //   id: "498",
+    //   name: "Rep. of Moldova"
+    // },
+    // {
+    //   id: "638",
+    //   name: "Réunion"
+    // },
+    // {
+    //   id: "642",
+    //   name: "Romania"
+    // },
+    // {
+    //   id: "643",
+    //   name: "Russia"
+    // },
+    // {
+    //   id: "646",
+    //   name: "Rwanda"
+    // },
+    // {
+    //   id: "647",
+    //   name: "Ryukyu Isd"
+    // },
+    // {
+    //   id: "461",
+    //   name: "Sabah"
+    // },
+    // {
+    //   id: "654",
+    //   name: "Saint Helena"
+    // },
+    // {
+    //   id: "659",
+    //   name: "Saint Kitts and Nevis"
+    // },
+    // {
+    //   id: "658",
+    //   name: "Saint Kitts, Nevis and Anguilla"
+    // },
+    // {
+    //   id: "662",
+    //   name: "Saint Lucia"
+    // },
+    // {
+    //   id: "534",
+    //   name: "Saint Maarten"
+    // },
+    // {
+    //   id: "666",
+    //   name: "Saint Pierre and Miquelon"
+    // },
+    // {
+    //   id: "670",
+    //   name: "Saint Vincent and the Grenadines"
+    // },
+    // {
+    //   id: "882",
+    //   name: "Samoa"
+    // },
+    // {
+    //   id: "674",
+    //   name: "San Marino"
+    // },
+    // {
+    //   id: "678",
+    //   name: "Sao Tome and Principe"
+    // },
+    // {
+    //   id: "457",
+    //   name: "Sarawak"
+    // },
+    // {
+    //   id: "682",
+    //   name: "Saudi Arabia"
+    // },
+    // {
+    //   id: "686",
+    //   name: "Senegal"
+    // },
+    // {
+    //   id: "688",
+    //   name: "Serbia"
+    // },
+    // {
+    //   id: "891",
+    //   name: "Serbia and Montenegro"
+    // },
+    // {
+    //   id: "690",
+    //   name: "Seychelles"
+    // },
+    // {
+    //   id: "694",
+    //   name: "Sierra Leone"
+    // },
+    // {
+    //   id: "702",
+    //   name: "Singapore"
+    // },
+    // {
+    //   id: "703",
+    //   name: "Slovakia"
+    // },
+    // {
+    //   id: "705",
+    //   name: "Slovenia"
+    // },
+
+    // {
+    //   id: "90",
+    //   name: "Solomon Isds"
+    // },
+    // {
+    //   id: "706",
+    //   name: "Somalia"
+    // },
+    // {
+    //   id: "710",
+    //   name: "South Africa"
+    // },
+    // {
+    //   id: "728",
+    //   name: "South Sudan"
+    // },
+    // {
+    //   id: "724",
+    //   name: "Spain"
+    // },
+    // {
+    //   id: "144",
+    //   name: "Sri Lanka"
+    // },
+
+    // {
+    //   id: "729",
+    //   name: "Sudan"
+    // },
+    // {
+    //   id: "740",
+    //   name: "Suriname"
+    // },
+    // {
+    //   id: "748",
+    //   name: "Swaziland"
+    // },
+    // {
+    //   id: "752",
+    //   name: "Sweden"
+    // },
+    // {
+    //   id: "757",
+    //   name: "Switzerland"
+    // },
+    // {
+    //   id: "760",
+    //   name: "Syria"
+    // },
+    // {
+    //   id: "762",
+    //   name: "Tajikistan"
+    // },
+    // {
+    //   id: "807",
+    //   name: "Macedonia"
+    // },
+    // {
+    //   id: "764",
+    //   name: "Thailand"
+    // },
+    // {
+    //   id: "626",
+    //   name: "Timor-Leste"
+    // },
+    // {
+    //   id: "768",
+    //   name: "Togo"
+    // },
+    // {
+    //   id: "772",
+    //   name: "Tokelau"
+    // },
+    // {
+    //   id: "776",
+    //   name: "Tonga"
+    // },
+    // {
+    //   id: "780",
+    //   name: "Trinidad and Tobago"
+    // },
+    // {
+    //   id: "788",
+    //   name: "Tunisia"
+    // },
+    // {
+    //   id: "792",
+    //   name: "Turkey"
+    // },
+    // {
+    //   id: "795",
+    //   name: "Turkmenistan"
+    // },
+    // {
+    //   id: "796",
+    //   name: "Turks and Caicos Isds"
+    // },
+    // {
+    //   id: "798",
+    //   name: "Tuvalu"
+    // },
+    // {
+    //   id: "800",
+    //   name: "Uganda"
+    // },
+    // {
+    //   id: "804",
+    //   name: "Ukraine"
+    // },
+    // {
+    //   id: "784",
+    //   name: "United Arab Emirates"
+    // },
+    // {
+    //   id: "826",
+    //   name: "United Kingdom"
+    // },
+    // {
+    //   id: "834",
+    //   name: "Tanzania"
+    // },
+    // {
+    //   id: "858",
+    //   name: "Uruguay"
+    // },
+    // {
+    //   id: "850",
+    //   name: "US Virgin Isds"
+    // },
+    // {
+    //   id: "842",
+    //   name: "USA"
+    // },
+
+    // {
+    //   id: "860",
+    //   name: "Uzbekistan"
+    // },
+    // {
+    //   id: "548",
+    //   name: "Vanuatu"
+    // },
+    // {
+    //   id: "862",
+    //   name: "Venezuela"
+    // },
+    // {
+    //   id: "704",
+    //   name: "Vietnam"
+    // },
+    // {
+    //   id: "876",
+    //   name: "Wallis and Futuna Isds"
+    // },
+    // {
+    //   id: "887",
+    //   name: "Yemen"
+    // },
+    // {
+    //   id: "894",
+    //   name: "Zambia"
+    // },
+    // {
+    //   id: "716",
+    //   name: "Zimbabwe"
+    // }
   ];
   console.log("Fetching data for all countries");
   let promises = countries.map(country => {

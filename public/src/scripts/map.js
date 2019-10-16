@@ -5,14 +5,23 @@
 import * as d3 from "d3";
 import * as topojson from "topojson";
 
-export const renderMap = allCountryData => {
-  function colorCountry(country) {
-    let allData = allCountryData;
-    debugger;
+export function renderMap(allCountryData) {
+  let fullData = allCountryData;
+  let test = 100;
+  function colorCountry() {
     return "#581845";
   }
-  var width = 960,
-    height = 500;
+  var colorById = {}; // Create empty object for holding dataset
+  fullData.forEach(function(d) {
+    colorById[d.id] = +d.total; // Create property for each ID, give it value from rate
+  });
+  var color = d3
+    .scaleThreshold()
+    .domain([4, 5, 10, 20, 50])
+    .range(["#f2f0f7", "#dadaeb", "#bcbddc", "#9e9ac8", "#756bb1", "#54278f"]);
+
+  var width = 960;
+  var height = 500;
 
   var projection = d3
     .geoMercator()
@@ -26,7 +35,6 @@ export const renderMap = allCountryData => {
     .attr("width", width)
     .attr("height", height)
     .attr("class", "map");
-
   var g = svg.append("g");
   var path = d3.geoPath().projection(projection);
   d3.json("../../assets/countries.geo.json").then(function(topology) {
@@ -34,9 +42,11 @@ export const renderMap = allCountryData => {
       .data(topojson.feature(topology, topology.objects.countries).features)
       .enter()
       .append("path")
-      .attr("fill", "#1E1E2F")
+      .attr("fill", "red")
       .attr("stroke", "#EDECF4")
       .attr("d", path)
-      .attr("fill", colorCountry);
+      .style("fill", function(d) {
+        return color(colorById[d.id]);
+      });
   });
-};
+}
