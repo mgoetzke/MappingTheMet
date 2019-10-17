@@ -7,57 +7,36 @@ function fetchDetails(country) {
 
 export function renderDetails(prompt) {
   if (prompt === "info") {
-    var svg = d3
+    let info = d3
       .select("#details-holder")
-      .append("svg")
-      .attr("id", "details_ID")
-      .attr("width", 500)
-      .attr("height", 500)
-      .attr("class", "details");
+      .append("div")
+      .attr("id", "details_ID");
+    info.append("h1").text("Mapping the Met");
+    info
+      .append("p")
+      .html(
+        `The Metropolitan Museum of Art holds over 400,000 objects in its collection. Click around the globe to explore where the artwork comes from.`
+      );
 
-    svg
-      .append("rect")
-      .attr("width", 345)
-      .attr("height", 234)
-      .attr("fill", "red");
     console.log("Test");
   } else {
     let details;
     fetchDetails(prompt).then(response => {
       details = response.data;
-      debugger;
+
       d3.select("#details_ID").remove();
-      var deets = d3
+      let deets = d3
         .select("#details-holder")
-        .append("svg")
-        .attr("id", "details_ID")
-        .attr("width", 500)
-        .attr("height", 500)
-        .attr("class", "details");
+        .append("div")
+        .attr("id", "details_ID");
+      deets.append("h1").text(prompt);
       deets
-        .append("text")
-        .text(prompt)
-        .attr("y", 100)
-        .attr("x", 30)
-        .style("text-anchor", "start");
-      deets
-        .append("text")
-        .text(`Total objects: ${details.total}`)
-        .attr("y", 120)
-        .attr("x", 30)
-        .style("text-anchor", "start");
-      deets
-        .append("text")
-        .text(`Total on display: ${details.displayed}`)
-        .attr("y", 140)
-        .attr("x", 30)
-        .style("text-anchor", "start");
-      deets
-        .append("text")
-        .text(`Collection Highlights: ${details.highlights}`)
-        .attr("y", 160)
-        .attr("x", 30)
-        .style("text-anchor", "start");
+        .append("p")
+        .html(`<span>Total objects: ${details.total}</span>`)
+        .append("p")
+        .html(`<span>Total on display: ${details.displayed}</span>`)
+        .append("p")
+        .html(`<span>Collection Highlights: ${details.highlights}`);
     });
     console.log(prompt);
   }

@@ -20,14 +20,14 @@ export function renderMap(allCountryData) {
     .domain([4, 5, 10, 20, 50])
     .range(["#f2f0f7", "#dadaeb", "#bcbddc", "#9e9ac8", "#756bb1", "#54278f"]);
 
-  var width = 500;
-  var height = 500;
+  var width = 600;
+  var height = 600;
   var focused;
 
   var projection = d3
     .geoOrthographic()
-    .scale(200)
-    .translate([width / 2, height / 2]);
+    .scale(250)
+    .translate([width / 1.8, height / 2.4]);
   var plane_path = d3.geoPath().projection(projection);
 
   var globe = d3
@@ -60,6 +60,7 @@ export function renderMap(allCountryData) {
         return color(colorById[d.id]);
       })
       .on("click", function(d) {
+        addClass(d);
         rotateMe(d);
       });
   });
@@ -92,6 +93,7 @@ export function renderMap(allCountryData) {
     })();
     stopGlobe();
   };
+  var addClass = function(d) {};
   rotateGlobe();
 
   const worldMap = document.getElementsByClassName("countries")[0];

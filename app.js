@@ -726,11 +726,11 @@ app.get("/objects/", (request, response) => {
     },
     {
       id: "410",
-      name: "Rep. of Korea"
+      name: "South Korea"
     },
     {
       id: "498",
-      name: "Rep. of Moldova"
+      name: "Moldova"
     },
     {
       id: "638",
