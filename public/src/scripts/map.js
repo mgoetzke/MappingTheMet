@@ -11,10 +11,7 @@ export function renderMap(allCountryData) {
     verticalTilt: 0,
     horizontalTilt: 0
   };
-  let stopRotation = false;
-  let lastElapse = 0;
   let fullData = allCountryData;
-  let test = 100;
   function colorCountry() {
     return "#581845";
   }
@@ -29,6 +26,7 @@ export function renderMap(allCountryData) {
 
   var width = 960;
   var height = 500;
+  var focused;
 
   var projection = d3
     .geoOrthographic()
@@ -42,7 +40,14 @@ export function renderMap(allCountryData) {
     .attr("width", width)
     .attr("height", height)
     .attr("class", "map");
+    svg
+      .append("path")
+      .datum({ type: "Sphere" })
+      .attr("class", "water")
+      .style("fill", "lightblue")
+      .attr("d", path);
   var g = svg.append("g");
+
   var path = d3.geoPath().projection(projection);
   d3.json("../../assets/countries.geo.json").then(function(topology) {
     g.selectAll("path")
@@ -54,12 +59,20 @@ export function renderMap(allCountryData) {
       .attr("d", path)
       .style("fill", function(d) {
         return color(colorById[d.id]);
+      })
+      .on("click", function(focusCountry){
+        debugger
+        //grab id
+        //rotate to id
+        // pop up with div containing id info
+        console.log("click");
       });
   });
 
   d3.timer(function (elapsed) {
     projection.rotate([config.speed * elapsed - 120, config.verticalTilt, config.horizontalTilt]);
     svg.selectAll("path").attr("d", path);
-    drawMarkers();
   });
+
+
 }
