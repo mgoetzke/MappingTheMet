@@ -1,7 +1,3 @@
-// window.d3 = require("d3");
-// import { select } from "d3-selection";
-// var d3 = require("d3");
-// import d3 from "../../assets/d3/import.js";
 import * as d3 from "d3";
 import * as topojson from "topojson";
 
@@ -12,12 +8,12 @@ export function renderMap(allCountryData) {
     horizontalTilt: 0
   };
   let fullData = allCountryData;
-  function colorCountry() {
-    return "#581845";
-  }
+  
   var colorById = {}; // Create empty object for holding dataset
+  var detailsById = {}; //Empty object holds country deets
   fullData.forEach(function(d) {
     colorById[d.id] = +d.total; // Create property for each ID, give it value from rate
+    detailsById[d.id] = d.country;
   });
   var color = d3
     .scaleThreshold()
@@ -40,7 +36,7 @@ export function renderMap(allCountryData) {
     .attr("width", width)
     .attr("height", height)
     .attr("class", "map");
-    svg
+  svg
       .append("path")
       .datum({ type: "Sphere" })
       .attr("class", "water")
@@ -60,13 +56,7 @@ export function renderMap(allCountryData) {
       .style("fill", function(d) {
         return color(colorById[d.id]);
       })
-      .on("click", function(focusCountry){
-        debugger
-        //grab id
-        //rotate to id
-        // pop up with div containing id info
-        console.log("click");
-      });
+      .on("click", function (d) { rotateMe(d); })
   });
 
   d3.timer(function (elapsed) {
@@ -74,5 +64,23 @@ export function renderMap(allCountryData) {
     svg.selectAll("path").attr("d", path);
   });
 
+  var rotateMe = function (d) {
+    // d3.selectAll(".clicked")
+    //   .classed("clicked", false)
+    // d3.select(this)
+    //   .classed("clicked", true)
 
+    (function transition() {
+      d3.transition()
+        .duration(1250)
+        .tween("rotate", function () {
+          var p = d3.geoCentroid(d.id);
+          var r = d3.interpolate(projection.rotate(), [-p[0], -p[1]]);
+          return function (t) {
+            projection.rotate(r(t));
+            svg.selectAll("path").attr("d", path);
+          }
+        });
+    })();
+  }
 }

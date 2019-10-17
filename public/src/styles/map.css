@@ -6,8 +6,8 @@ body {
   font-size: 17px;
 }
 #map-holder {
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
 }
 svg rect {
   fill: #2a2c39; /* map background colour */
