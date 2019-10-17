@@ -476,22 +476,22 @@ app.get("/objects/", (request, response) => {
       id: "428",
       name: "Latvia"
     },
-    // {
-    //   id: "422",
-    //   name: "Lebanon"
-    // },
-    // {
-    //   id: "426",
-    //   name: "Lesotho"
-    // },
-    // {
-    //   id: "430",
-    //   name: "Liberia"
-    // },
-    // {
-    //   id: "434",
-    //   name: "Libya"
-    // },
+    {
+      id: "422",
+      name: "Lebanon"
+    },
+    {
+      id: "426",
+      name: "Lesotho"
+    },
+    {
+      id: "430",
+      name: "Liberia"
+    },
+    {
+      id: "434",
+      name: "Libya"
+    },
     // {
     //   id: "440",
     //   name: "Lithuania"

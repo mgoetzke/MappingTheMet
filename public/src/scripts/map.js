@@ -74,8 +74,9 @@ export function renderMap(allCountryData) {
       d3.transition()
         .duration(1250)
         .tween("rotate", function () {
-          var p = d3.geoCentroid(d.id);
+          var p = d3.geoCentroid(d);
           var r = d3.interpolate(projection.rotate(), [-p[0], -p[1]]);
+          debugger
           return function (t) {
             projection.rotate(r(t));
             svg.selectAll("path").attr("d", path);
