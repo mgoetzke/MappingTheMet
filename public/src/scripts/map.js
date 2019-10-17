@@ -27,7 +27,7 @@ export function renderMap(allCountryData) {
   var projection = d3
     .geoOrthographic()
     .scale(200)
-    .translate([width / 2.2, height / 1.5]);
+    .translate([width / 2, height / 1.5]);
   var plane_path = d3.geoPath().projection(projection);
 
   var svg = d3
