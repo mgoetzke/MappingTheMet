@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const fetch = require("node-fetch");
+const fetch = require("fetch-retry");
 const PORT = process.env.PORT || 8080; // process.env accesses heroku's environment variables
 const Axios = require("axios");
 app.use(express.static("public"));
@@ -25,13 +25,7 @@ app.get("/objects/:location", (request, response) => {
       response.send(results); // sends to frontend
     });
 });
-const fetch_retry = (country, n) =>
-  fetch(
-    `https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${country.name}&q=""`
-  ).catch(function(error) {
-    if (n === 1) throw error;
-    return fetch_retry(country, n - 1);
-  });
+
 // create route to get total objects for all countries
 app.get("/objects/", (request, response) => {
   // make api call using fetch
@@ -961,7 +955,9 @@ app.get("/objects/", (request, response) => {
   console.log("Fetching data for all countries");
   let promises = countries.map(country => {
     let result = { country: "", id: 0, total: 0 };
-    return fetch_retry(country, 5)
+    return fetch(
+      `https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${country.name}&q=""`
+    )
       .then(response => {
         return response.text();
       })

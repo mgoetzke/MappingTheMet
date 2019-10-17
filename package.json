@@ -36,6 +36,7 @@
     "d3-geomap": "^3.1.0",
     "d3-queue": "^3.0.7",
     "express": "^4.17.1",
+    "fetch-retry": "^2.2.3",
     "fibers": "^4.0.1",
     "mini-css-extract-plugin": "^0.8.0",
     "node-fetch": "^2.6.0",
