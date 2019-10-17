@@ -1,3 +1,36 @@
+body {
+  margin: 0;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 200;
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  align-content: space-between;
+}
+.header-icons {
+  display: flex;
+  align-content: space-between;
+}
+.main-container {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+#map-holder {
+  display: flex;
+  width: 50%;
+  height: 100vh;
+}
 
+#details-holder {
+  width: 50%;
+  height: 100vh;
+}
+.details-title {
+  color: red;
+}
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYWluLmNzcyIsInNvdXJjZXNDb250ZW50IjpbXSwic291cmNlUm9vdCI6IiJ9*/

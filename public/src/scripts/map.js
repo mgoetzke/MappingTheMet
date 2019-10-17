@@ -1,6 +1,6 @@
 import * as d3 from "d3";
 import * as topojson from "topojson";
-
+import { renderDetails } from "./details";
 export function renderMap(allCountryData) {
   let config = {
     speed: 0.005,
@@ -20,29 +20,29 @@ export function renderMap(allCountryData) {
     .domain([4, 5, 10, 20, 50])
     .range(["#f2f0f7", "#dadaeb", "#bcbddc", "#9e9ac8", "#756bb1", "#54278f"]);
 
-  var width = 960;
+  var width = 500;
   var height = 500;
   var focused;
 
   var projection = d3
     .geoOrthographic()
     .scale(200)
-    .translate([width / 2, height / 1.5]);
+    .translate([width / 2, height / 2]);
   var plane_path = d3.geoPath().projection(projection);
 
-  var svg = d3
+  var globe = d3
     .select("#map-holder")
     .append("svg")
     .attr("width", width)
     .attr("height", height)
     .attr("class", "map");
-  svg
+  globe
     .append("path")
     .datum({ type: "Sphere" })
     .attr("class", "water")
     .style("fill", "lightblue")
     .attr("d", path);
-  var g = svg.append("g");
+  var g = globe.append("g").attr("class", "countries");
 
   var path = d3.geoPath().projection(projection);
   d3.json("../../assets/countries.geo.json").then(function(topology) {
@@ -53,6 +53,9 @@ export function renderMap(allCountryData) {
       .attr("fill", "red")
       .attr("stroke", "#EDECF4")
       .attr("d", path)
+      .attr("name", function(d) {
+        return detailsById[d.id];
+      })
       .style("fill", function(d) {
         return color(colorById[d.id]);
       })
@@ -68,7 +71,7 @@ export function renderMap(allCountryData) {
         config.verticalTilt,
         config.horizontalTilt
       ]);
-      svg.selectAll("path").attr("d", path);
+      globe.selectAll("path").attr("d", path);
     });
   }
   function stopGlobe() {
@@ -81,14 +84,20 @@ export function renderMap(allCountryData) {
         .tween("rotate", function() {
           var p = d3.geoCentroid(d);
           var r = d3.interpolate(projection.rotate(), [-p[0], -p[1]]);
-          debugger;
           return function(t) {
             projection.rotate(r(t));
-            svg.selectAll("path").attr("d", path);
+            globe.selectAll("path").attr("d", path);
           };
         });
     })();
     stopGlobe();
   };
   rotateGlobe();
+
+  const worldMap = document.getElementsByClassName("countries")[0];
+  worldMap.addEventListener("click", e => {
+    const id = e.target.__data__.id;
+    const name = e.target.getAttribute("name");
+    renderDetails(name);
+  });
 }

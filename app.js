@@ -14,7 +14,7 @@ app.get("/", (request, res) => {
 app.get("/objects/:location", (request, response) => {
   // make api call using fetch
   fetch(
-    `https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${request.params.location}&q=""`
+    `https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${request.params.location}&q=*`
   )
     .then(response => {
       return response.text();
@@ -25,7 +25,55 @@ app.get("/objects/:location", (request, response) => {
       response.send(results); // sends to frontend
     });
 });
+// route to get details by country
+app.get("/details/:location", (request, response) => {
+  // make api call using fetch
+  let promisedFetchTotal = fetch(
+    `https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${request.params.location}&q=*`
+  )
+    .then(response => {
+      return response.text();
+    })
+    .then(body => {
+      let results = JSON.parse(body);
+      return { total: results.total };
+    });
 
+  let promisedFetchHighlights = fetch(
+    `https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${request.params.location}&isHighlight=true&q=*`
+  )
+    .then(response => {
+      return response.text();
+    })
+    .then(body => {
+      let results = JSON.parse(body);
+      return { highlights: results.total };
+    });
+
+  let promisedFetchDisplayed = fetch(
+    `https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${request.params.location}&isOnView=true&q=*`
+  )
+    .then(response => {
+      return response.text();
+    })
+    .then(body => {
+      let results = JSON.parse(body);
+      return { displayed: results.total };
+    });
+
+  Promise.all([
+    promisedFetchTotal,
+    promisedFetchHighlights,
+    promisedFetchDisplayed
+  ]).then(data => {
+    let formatData = {};
+    data.forEach(row => {
+      formatData[Object.keys(row)[0]] = Object.values(row)[0];
+    });
+    console.log("Country handler", formatData);
+    response.send(formatData);
+  });
+});
 // create route to get total objects for all countries
 app.get("/objects/", (request, response) => {
   // make api call using fetch
@@ -956,7 +1004,7 @@ app.get("/objects/", (request, response) => {
   let promises = countries.map(country => {
     let result = { country: "", id: 0, total: 0 };
     return fetch(
-      `https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${country.name}&q=""`
+      `https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${country.name}&q=*`
     )
       .then(response => {
         return response.text();
