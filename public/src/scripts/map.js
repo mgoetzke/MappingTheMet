@@ -8,7 +8,7 @@ export function renderMap(allCountryData) {
     horizontalTilt: 0
   };
   let fullData = allCountryData;
-  
+
   var colorById = {}; // Create empty object for holding dataset
   var detailsById = {}; //Empty object holds country deets
   fullData.forEach(function(d) {
@@ -37,11 +37,11 @@ export function renderMap(allCountryData) {
     .attr("height", height)
     .attr("class", "map");
   svg
-      .append("path")
-      .datum({ type: "Sphere" })
-      .attr("class", "water")
-      .style("fill", "lightblue")
-      .attr("d", path);
+    .append("path")
+    .datum({ type: "Sphere" })
+    .attr("class", "water")
+    .style("fill", "lightblue")
+    .attr("d", path);
   var g = svg.append("g");
 
   var path = d3.geoPath().projection(projection);
@@ -56,32 +56,39 @@ export function renderMap(allCountryData) {
       .style("fill", function(d) {
         return color(colorById[d.id]);
       })
-      .on("click", function (d) { rotateMe(d); })
+      .on("click", function(d) {
+        rotateMe(d);
+      });
   });
-
-  d3.timer(function (elapsed) {
-    projection.rotate([config.speed * elapsed - 120, config.verticalTilt, config.horizontalTilt]);
-    svg.selectAll("path").attr("d", path);
-  });
-
-  var rotateMe = function (d) {
-    // d3.selectAll(".clicked")
-    //   .classed("clicked", false)
-    // d3.select(this)
-    //   .classed("clicked", true)
-
+  let timer;
+  function rotateGlobe() {
+    timer = d3.timer(function(elapsed) {
+      projection.rotate([
+        config.speed * elapsed - 120,
+        config.verticalTilt,
+        config.horizontalTilt
+      ]);
+      svg.selectAll("path").attr("d", path);
+    });
+  }
+  function stopGlobe() {
+    timer.stop();
+  }
+  var rotateMe = function(d) {
     (function transition() {
       d3.transition()
         .duration(1250)
-        .tween("rotate", function () {
+        .tween("rotate", function() {
           var p = d3.geoCentroid(d);
           var r = d3.interpolate(projection.rotate(), [-p[0], -p[1]]);
-          debugger
-          return function (t) {
+          debugger;
+          return function(t) {
             projection.rotate(r(t));
             svg.selectAll("path").attr("d", path);
-          }
+          };
         });
     })();
-  }
+    stopGlobe();
+  };
+  rotateGlobe();
 }
