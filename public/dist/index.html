@@ -8,6 +8,10 @@
     <script type="text/javascript" src="./dist/main.js"></script>
     <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
     <script src="https://d3js.org/topojson.v2.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"
+    ></script>
 
     <title>Mapping the Met</title>
   </head>
@@ -20,12 +24,12 @@
     <div id="app" class="main-container">
       <div id="map-holder" class="world-map-container"></div>
       <div class="details-container">
-        <div id="details-holder">
-        </div>
+        <div id="details-holder"></div>
         <div id="dates-holder">
+          <canvas id="dates-chart"></canvas>
         </div>
       </div>
-  </div>
+    </div>
     <div class="footer"></div>
   </body>
 </html>

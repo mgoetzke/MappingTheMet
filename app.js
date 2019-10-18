@@ -1024,7 +1024,7 @@ app.get("/objects/", (request, response) => {
 });
 
 // route to get dates by country
-app.get('/dates/:location', (request, response) => {
+app.get("/dates/:location", (request, response) => {
   // make api call using fetch
   let promised0 = fetch(
     `https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${request.params.location}&dateBegin=-5000&dateEnd=0&q=*`
@@ -1037,25 +1037,46 @@ app.get('/dates/:location', (request, response) => {
       return { year: 0, total: results.total };
     });
 
-  let years = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000];
-  let promiseCenturies = years.map((year)=> {
+  let years = [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+    1000,
+    1100,
+    1200,
+    1300,
+    1400,
+    1500,
+    1600,
+    1700,
+    1800,
+    1900,
+    2000
+  ];
+  let promiseCenturies = years.map(year => {
     let currentYear = year;
     return fetch(
-      `https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${request.params.location}&dateBegin=${year-100}&dateEnd=${year}&q=*`
+      `https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${
+        request.params.location
+      }&dateBegin=${year - 100}&dateEnd=${year}&q=*`
     )
       .then(response => {
         return response.text();
       })
       .then(body => {
         let results = JSON.parse(body);
-        let result = {year: currentYear, total: results.total};
+        let result = { year: currentYear, total: results.total };
         return result;
       });
-  })
+  });
 
-  Promise.all([
-    promised0, ...promiseCenturies
-  ]).then(data => {
+  Promise.all([promised0, ...promiseCenturies]).then(data => {
     let formatData = {};
     data.forEach(row => {
       formatData[Object.keys(row)[0]] = Object.values(row)[0];
