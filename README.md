@@ -2,7 +2,9 @@
 
 ## Overview
 
-The Metropolitan Museum of Art's collection is world-class. Is it worldly? I plan to use The Metropolitan Museum of Art Collection API to delve deeper into the origins of its pieces. Particularly, I'd like to examine the country of origin of artworks by medium, by year, and whether the piece of art is designated a "highlight" or even on display.
+The Metropolitan Museum of Art's collection is world-class. Is it worldly? Mapping the Met uses The Metropolitan Museum of Art Collection API to delve deeper into the origins of its pieces and allows the user to examine the country of origin of artworks by year, and whether the piece of art is designated a "highlight" or even on display.
+
+[Live Site](http://mappingthemet.herokuapp.com/)
 
 ## Functionality & MVPs
 
