@@ -89,6 +89,10 @@ app.get("/objects/", (request, response) => {
       name: "Algeria"
     },
     {
+      id: "10",
+      name: "Antarctica"
+    },
+    {
       id: "20",
       name: "Andorra"
     },
@@ -375,6 +379,10 @@ app.get("/objects/", (request, response) => {
       name: "French Polynesia"
     },
     {
+      id: "260",
+      name: "French Southern Territories"
+    },
+    {
       id: "583",
       name: "FS Micronesia"
     },
@@ -507,7 +515,7 @@ app.get("/objects/", (request, response) => {
       name: "Kiribati"
     },
     {
-      id: "383",
+      id: "-2",
       name: "Kosovo"
     },
     {
@@ -699,6 +707,10 @@ app.get("/objects/", (request, response) => {
       name: "Paraguay"
     },
     {
+      id: "275",
+      name: "Palestine"
+    },
+    {
       id: "459",
       name: "Peninsula Malaysia"
     },
@@ -717,6 +729,10 @@ app.get("/objects/", (request, response) => {
     {
       id: "620",
       name: "Portugal"
+    },
+    {
+      id: "630",
+      name: "Puerto Rico"
     },
     {
       id: "634",
@@ -844,6 +860,10 @@ app.get("/objects/", (request, response) => {
       name: "Somalia"
     },
     {
+      id: "-3",
+      name: "Somaliland"
+    },
+    {
       id: "710",
       name: "South Africa"
     },
@@ -953,6 +973,10 @@ app.get("/objects/", (request, response) => {
       name: "United Kingdom"
     },
     {
+      id: "158",
+      name: "Taiwan"
+    },
+    {
       id: "834",
       name: "Tanzania"
     },
@@ -984,6 +1008,10 @@ app.get("/objects/", (request, response) => {
     {
       id: "704",
       name: "Vietnam"
+    },
+    {
+      id: "732",
+      name: "Western Sahara"
     },
     {
       id: "887",

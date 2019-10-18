@@ -76,7 +76,7 @@ export function renderDetails(prompt) {
             {
               label: "Objects",
               data: values,
-              backgroundColor: "rgb(83, 25, 143)"
+              backgroundColor: "rgb(57, 0, 111)"
             }
           ]
         },

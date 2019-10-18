@@ -17,12 +17,19 @@ export function renderMap(allCountryData) {
   });
   var color = d3
     .scaleThreshold()
-    .domain([4, 5, 10, 20, 50])
-    .range(["#f2f0f7", "#dadaeb", "#bcbddc", "#9e9ac8", "#756bb1", "#54278f"]);
+    .domain([1, 10, 50, 100, 1000, 10000])
+    .range([
+      "#f2f0f7",
+      "#dadaeb",
+      "#bcbddc",
+      "#9e9ac8",
+      "#756bb1",
+      "#54278f",
+      "#3A126F"
+    ]);
 
   var width = 600;
   var height = 500;
-  var focused;
 
   var projection = d3
     .geoOrthographic()
@@ -53,6 +60,9 @@ export function renderMap(allCountryData) {
       .append("path")
       .attr("fill", "red")
       .attr("stroke", "#EDECF4")
+      .attr("id", function(d) {
+        return d.id;
+      })
       .attr("d", path)
       .attr("name", function(d) {
         return detailsById[d.id];
