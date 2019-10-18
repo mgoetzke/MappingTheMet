@@ -27,6 +27,13 @@ export function renderDetails(prompt) {
       .html(`</br>`)
       .append("p")
       .html(
+        `Inconsistencies between present-day country names and historical culture names
+        may exist and are not accounted for in this data visualization.`
+      )
+      .append("p")
+      .html(`</br>`)
+      .append("p")
+      .html(
         `<span class="bold">Click</span> around the globe to explore where the artwork comes from.`
       );
   } else {
@@ -43,14 +50,27 @@ export function renderDetails(prompt) {
       //   .select("#details-holder")
       //   .append("div")
       //   .attr("id", "details_ID");
+      let totalWord = details.total === 1 ? "artwork" : "artworks";
+      let displayWord = details.displayed === 1 ? "is" : "are";
+      let highlightWords =
+        details.highlights === 1
+          ? "is designated a collection highlight"
+          : "are designated collection highlights";
       deets.append("h1").text(prompt);
       deets
+        // .append("p")
+        // .html(`<span>Total objects: ${details.total}</span>`)
+        // .append("p")
+        // .html(`<span>Total on display: ${details.displayed}</span>`)
+        // .append("p")
+        // .html(`<span>Collection highlights: ${details.highlights}`);
         .append("p")
-        .html(`<span>Total objects: ${details.total}</span>`)
-        .append("p")
-        .html(`<span>Total on display: ${details.displayed}</span>`)
-        .append("p")
-        .html(`<span>Collection Highlights: ${details.highlights}`);
+        .html(
+          `The Metropolitan Museum of Art has <span class="bold">${details.total}</span>
+          ${totalWord} from <span class="bold">${prompt}</span> in its collection. 
+          Of those, <span class="bold">${details.displayed}</span> ${displayWord} on display and
+          <span class="bold">${details.highlights}</span> ${highlightWords}.`
+        );
       // exit.append("p")
       // .html(`<button onClick={}>Exit</button>`)
     });
