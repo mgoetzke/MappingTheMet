@@ -9,9 +9,8 @@ The Metropolitan Museum of Art's collection is world-class. Is it worldly? I pla
 MetArt users are are able to:
 
 - See a broad overview of the museums's collection by country of origin
-- Examine the museum's collection by country of origin to explore medium and other details
-- Explore the geographic distribution of the museum's collection by year of creation
-- Filter the museum's collection by 'highlight' and 'on-view' designation
+- Examine the museum's collection by country of origin to explore 'on-view' and 'highlight' designation
+- Explore the museum's collection by country of orgin and year of creation
 
 ## Data & APIs
 
@@ -19,7 +18,7 @@ Artwork information is available for free through The Metropolitan Museum of Art
 
 ## Wireframe
 Mapping the Met will consist of a single page that allows users to view a world map (a) of data for all countries or filter by a particular country (b) to get country-specific information (d). User can also use a sliding timescale to adjust information on global distribution of artworks (e). A sidebar (c) and footer (f) will contain author and dataset information.
-![Wireframe](assets/images/wireframe.png)
+![Wireframe](public/assets/images/wireframe.png)
 
 ## Design
 
