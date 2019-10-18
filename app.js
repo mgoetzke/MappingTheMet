@@ -21,7 +21,6 @@ app.get("/objects/:location", (request, response) => {
     })
     .then(body => {
       let results = JSON.parse(body);
-      console.log(results); // logs to server
       response.send(results); // sends to frontend
     });
 });
@@ -70,7 +69,6 @@ app.get("/details/:location", (request, response) => {
     data.forEach(row => {
       formatData[Object.keys(row)[0]] = Object.values(row)[0];
     });
-    console.log("Country handler", formatData);
     response.send(formatData);
   });
 });
@@ -1000,7 +998,6 @@ app.get("/objects/", (request, response) => {
       name: "Zimbabwe"
     }
   ];
-  console.log("Fetching data for all countries");
   let promises = countries.map(country => {
     let result = { country: "", id: 0, total: 0 };
     return fetch(
@@ -1018,7 +1015,6 @@ app.get("/objects/", (request, response) => {
       });
   });
   Promise.all(promises).then(data => {
-    console.log("First handler", data);
     response.send(data);
   });
 });
@@ -1034,7 +1030,7 @@ app.get("/dates/:location", (request, response) => {
     })
     .then(body => {
       let results = JSON.parse(body);
-      return { year: 0, total: results.total };
+      return { year: "< 0CE", total: results.total };
     });
 
   let years = [
@@ -1081,11 +1077,7 @@ app.get("/dates/:location", (request, response) => {
     data.forEach(row => {
       formatData[Object.keys(row)[0]] = Object.values(row)[0];
     });
-    console.log("Country Year handler", data);
     response.send(data);
   });
 });
-app.listen(PORT, () => {
-  console.log(__dirname);
-  console.log(`listening on ${PORT}`);
-});
+app.listen(PORT, () => {});

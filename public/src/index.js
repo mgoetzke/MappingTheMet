@@ -5,7 +5,6 @@ import { renderSpinner } from "./scripts/spinner.js";
 const axios = require("axios");
 
 window.addEventListener("DOMContentLoaded", () => {
-  console.log("about to render");
   renderDetails("info");
   renderSpinner("#map-holder");
   axios.get("/objects").then(fetchResponse => {

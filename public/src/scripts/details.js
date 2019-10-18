@@ -29,8 +29,6 @@ export function renderDetails(prompt) {
       .html(
         `<span class="bold">Click</span> around the globe to explore where the artwork comes from.`
       );
-
-    console.log("Test");
   } else {
     let details;
     fetchDetails(prompt).then(response => {
@@ -54,8 +52,9 @@ export function renderDetails(prompt) {
         .append("p")
         .html(`<span>Collection Highlights: ${details.highlights}`);
       // exit.append("p")
-      // .html(`<button onClick={console.log("hi")}>Exit</button>`)
+      // .html(`<button onClick={}>Exit</button>`)
     });
+
     fetchDates(prompt).then(response => {
       let data = response.data;
       let years = [];
@@ -64,8 +63,12 @@ export function renderDetails(prompt) {
         years.push(Object.values(row)[0]);
         values.push(Object.values(row)[1]);
       });
+
       var ctx = document.getElementById("dates-chart");
-      var myChart = new Chart(ctx, {
+      if (ctx.$chartjs) {
+        window.myChart.destroy();
+      }
+      window.myChart = new Chart(ctx, {
         type: "bar",
         data: {
           labels: years,
@@ -78,10 +81,28 @@ export function renderDetails(prompt) {
           ]
         },
         options: {
+          scales: {
+            yAxes: [
+              {
+                scaleLabel: {
+                  display: true,
+                  labelString: "Object count"
+                }
+              }
+            ],
+            xAxes: [
+              {
+                scaleLabel: {
+                  display: true,
+                  labelString: "Century"
+                }
+              }
+            ]
+          },
           legend: { display: false },
           title: {
             display: true,
-            text: "Collection holdings by creation century"
+            text: "Holdings by object creation date"
           }
         }
       });
@@ -141,8 +162,6 @@ export function renderDetails(prompt) {
       //     .attr("height", function (d) {
       //       return height - y(Number(d.total));
       //     });
-
-      console.log(prompt);
     });
   }
 }
