@@ -1,28 +1,73 @@
+p,
+h1 {
+  margin: 0;
+}
 body {
   margin: 0;
-  background-color: #2a2c39;
   font-family: "Yanone Kaffeesatz", sans-serif;
   font-weight: 200;
   font-size: 17px;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
 }
 .header {
   display: flex;
   align-content: space-between;
+  padding: 10px;
+  padding-left: 40px;
+  background-color: RGB(83, 25, 143);
+  margin-bottom: 50px;
+  color: RGB(255, 255, 255);
 }
 .header-icons {
   display: flex;
   align-content: space-between;
 }
+.main-container {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  height: 100%;
+}
 #map-holder {
   display: flex;
   width: 50%;
-  height: 100vh;
 }
-svg rect {
-  fill: #2a2c39; /* map background colour */
-}
+
 #details-holder {
-  width: 50%;
-  height: 100vh;
+  width: 500px;
+  min-height: 500px;
+  border: 3px solid black;
+  padding: 15px;
+  box-sizing: border-box;
+  margin-right: 60px;
+  margin-left: 30px;
+}
+.details-title {
+  color: red;
+}
+.footer {
+  height: 60px;
+  margin-top: 50px;
+  background-color: RGB(83, 25, 143);
+  color: RGB(255, 255, 255);
+}
+
+#details_ID h1 {
+  margin-bottom: 10px;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

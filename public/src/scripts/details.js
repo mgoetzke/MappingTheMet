@@ -15,8 +15,12 @@ export function renderDetails(prompt) {
     info
       .append("p")
       .html(
-        `The Metropolitan Museum of Art holds over 400,000 objects in its collection. Click around the globe to explore where the artwork comes from.`
-      );
+        `The Metropolitan Museum of Art holds over two million artworks in its permanent collection. 
+        Mapping the Met uses the museum's API to access geolocation information on 470,000 of those objects.`
+      )
+      .append("p")
+      .html(`Click around the globe to explore where the artwork comes from.`)
+      ;
 
     console.log("Test");
   } else {
@@ -29,6 +33,10 @@ export function renderDetails(prompt) {
         .select("#details-holder")
         .append("div")
         .attr("id", "details_ID");
+      // let exit = d3
+      //   .select("#details-holder")
+      //   .append("div")
+      //   .attr("id", "details_ID");
       deets.append("h1").text(prompt);
       deets
         .append("p")
@@ -37,6 +45,8 @@ export function renderDetails(prompt) {
         .html(`<span>Total on display: ${details.displayed}</span>`)
         .append("p")
         .html(`<span>Collection Highlights: ${details.highlights}`);
+      // exit.append("p")
+      // .html(`<button onClick={console.log("hi")}>Exit</button>`)
     });
     console.log(prompt);
   }

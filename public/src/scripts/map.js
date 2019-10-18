@@ -21,15 +21,16 @@ export function renderMap(allCountryData) {
     .range(["#f2f0f7", "#dadaeb", "#bcbddc", "#9e9ac8", "#756bb1", "#54278f"]);
 
   var width = 600;
-  var height = 600;
+  var height = 500;
   var focused;
 
   var projection = d3
     .geoOrthographic()
     .scale(250)
-    .translate([width / 1.8, height / 2.4]);
+    .translate([width / 1.8, height / 2]);
   var plane_path = d3.geoPath().projection(projection);
 
+  d3.select("#spinner").remove();
   var globe = d3
     .select("#map-holder")
     .append("svg")
