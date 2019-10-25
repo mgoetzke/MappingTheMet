@@ -22,9 +22,12 @@
 ## Feature Highlights
 
 - Clickable globe to examine collection by country
-  ![alt text](https://media.giphy.com/media/TKRVyMb5SxLxAgwLMP/giphy.gif "Mapping the Met Globe")
+
+![alt text](public/assets/globe.png "Mapping the Met Globe")
+
 - Detailed breakdown of collection by country
-  ![alt text](public/assets/images/globe.png "Mapping the Met Country Breakdown")
+
+![alt text](https://media.giphy.com/media/Sw7MVx2imq6kh1fLXV/giphy.gif "Mapping the Met Country Breakdown")
 
 ## Data & APIs
 
