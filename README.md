@@ -23,7 +23,7 @@
 
 - Clickable globe to examine collection by country
 
-![alt text](public/assets/globe.png "Mapping the Met Globe")
+![alt text](public/assets/images/globe.png "Mapping the Met Globe")
 
 - Detailed breakdown of collection by country
 
