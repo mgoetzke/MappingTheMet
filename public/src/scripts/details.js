@@ -94,7 +94,7 @@ export function renderDetails(prompt) {
           labels: years,
           datasets: [
             {
-              label: "Objects",
+              label: "Artworks",
               data: values,
               backgroundColor: "rgb(57, 0, 111)"
             }

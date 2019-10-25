@@ -3,7 +3,11 @@ const app = express();
 const path = require("path");
 const fetch = require("fetch-retry");
 const PORT = process.env.PORT || 8080; // process.env accesses heroku's environment variables
+const favicon = require("serve-favicon");
 const Axios = require("axios");
+app.use(
+  favicon(path.join(__dirname, "public", "assets", "images", "favicon.png"))
+);
 app.use(express.static("public"));
 
 app.get("/", (request, res) => {

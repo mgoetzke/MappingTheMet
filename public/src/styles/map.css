@@ -59,12 +59,15 @@ body {
   margin-top: 50px;
   background-color: rgb(57, 0, 111);
   color: RGB(255, 255, 255);
-  font-size: 25px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  padding-left: 25px;
 }
 .footer-icons {
+  font-size: 25px;
   width: 150px;
   display: flex;
   justify-content: space-evenly;
