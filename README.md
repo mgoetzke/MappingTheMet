@@ -35,7 +35,7 @@ Artwork information is available for free through The Metropolitan Museum of Art
 
 ## Wireframe
 
-Mapping the Met will consist of a single page that allows users to view a world map (a) of data for all countries or filter by a particular country (b) to get country-specific information (d). User can also use a sliding timescale to adjust information on global distribution of artworks (e). A sidebar (c) and footer (f) will contain author and dataset information.
+Mapping the Met will consist of a single page that allows users to view a globe (a) presenting data for all countries or click on a particular country (b) to get country-specific information (c) and country-specific graphs (d). A footer (e) will contain author information.
 ![Wireframe](public/assets/images/wireframe.png)
 
 ## Future Features
