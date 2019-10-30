@@ -27,13 +27,14 @@ body {
 .main-container {
   display: flex;
   flex-direction: row;
-  align-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   height: 100%;
   align-items: center;
 }
 #map-holder {
   display: flex;
-  width: 50%;
+  width: 600px;
   height: 500px;
 }
 
@@ -45,7 +46,7 @@ body {
   box-sizing: border-box;
   padding: 25px;
   height: 500px;
-  width: 50%;
+  width: 600px;
   margin-right: 60px;
 }
 #details-holder {

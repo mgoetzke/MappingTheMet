@@ -28,7 +28,6 @@ export function renderMap(allCountryData) {
       "#54278f",
       "#3A126F"
     ]);
-
   var width = 600;
   var height = 500;
 
