@@ -12,6 +12,11 @@ function fetchDates(country) {
 
 export function renderDetails(prompt) {
   if (prompt === "info") {
+    d3.select("#details_ID").remove();
+    var ctx = document.getElementById("dates-chart");
+    if (ctx.$chartjs) {
+      window.myChart.destroy();
+    }
     let info = d3
       .select("#details-holder")
       .append("div")
@@ -57,20 +62,12 @@ export function renderDetails(prompt) {
           ? "is designated a collection highlight"
           : "are designated collection highlights";
       deets.append("h1").text(prompt);
-      deets
-        // .append("p")
-        // .html(`<span>Total objects: ${details.total}</span>`)
-        // .append("p")
-        // .html(`<span>Total on display: ${details.displayed}</span>`)
-        // .append("p")
-        // .html(`<span>Collection highlights: ${details.highlights}`);
-        .append("p")
-        .html(
-          `The Metropolitan Museum of Art has <span class="bold">${details.total}</span>
+      deets.append("p").html(
+        `The Metropolitan Museum of Art has <span class="bold">${details.total}</span>
           ${totalWord} from <span class="bold">${prompt}</span> in its collection. 
           Of those, <span class="bold">${details.displayed}</span> ${displayWord} on display and
           <span class="bold">${details.highlights}</span> ${highlightWords}.`
-        );
+      );
       // exit.append("p")
       // .html(`<button onClick={}>Exit</button>`)
     });

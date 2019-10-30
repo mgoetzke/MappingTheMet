@@ -7,6 +7,7 @@ export function renderMap(allCountryData) {
     verticalTilt: 0,
     horizontalTilt: 0
   };
+  let sens = 0.25;
   let fullData = allCountryData;
 
   var colorById = {}; // Create empty object for holding dataset
@@ -50,6 +51,7 @@ export function renderMap(allCountryData) {
     .attr("class", "water")
     .style("fill", "lightblue")
     .attr("d", path);
+
   var g = globe.append("g").attr("class", "countries");
 
   var path = d3.geoPath().projection(projection);
@@ -70,11 +72,39 @@ export function renderMap(allCountryData) {
       .style("fill", function(d) {
         return color(colorById[d.id]);
       })
+      .call(
+        d3
+          .drag()
+          .subject(function() {
+            var r = projection.rotate();
+            console.log(r);
+            return { x: r[0] / sens, y: -r[1] / sens };
+          })
+          .on("start", dragStarted)
+          .on("drag", function() {
+            console.log("drag function");
+            var rotate = projection.rotate();
+            projection.rotate([
+              d3.event.x * sens,
+              -d3.event.y * sens,
+              rotate[2]
+            ]);
+            globe.selectAll("path").attr("d", path);
+          })
+          .on("end", dragEnded)
+      )
       .on("click", function(d) {
         addClass(d);
         rotateMe(d);
       });
   });
+  function dragStarted() {
+    console.log("drag function");
+    stopGlobe();
+  }
+  function dragEnded() {
+    stopGlobe();
+  }
   let timer;
   function rotateGlobe() {
     timer = d3.timer(function(elapsed) {
@@ -104,6 +134,7 @@ export function renderMap(allCountryData) {
     })();
     stopGlobe();
   };
+
   var addClass = function(d) {};
   rotateGlobe();
 

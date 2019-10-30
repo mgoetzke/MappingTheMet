@@ -49,6 +49,7 @@
     "serve-favicon": "^2.5.0",
     "style-loader": "^1.0.0",
     "topojson": "^3.0.2",
+    "versor": "0.0.4",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.2",
