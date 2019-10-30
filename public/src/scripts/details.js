@@ -98,6 +98,7 @@ export function renderDetails(prompt) {
           ]
         },
         options: {
+          responsive: false,
           scales: {
             yAxes: [
               {
@@ -123,62 +124,6 @@ export function renderDetails(prompt) {
           }
         }
       });
-      // d3.select("#dates_ID").remove();
-      // var svg = d3.select('#dates-holder').append('svg');
-      // svg.attr('width', 300).attr('height', 200)
-      // var margin = {
-      //   top: 10,
-      //   right: 20,
-      //   bottom: 20,
-      //   left: 40
-      // },
-      //   width = +svg.attr("width") - margin.left - margin.right,
-      //   height = +svg.attr("height") - margin.top - margin.bottom,
-      //   id = +svg.attr('id','dates_ID'),
-      //   g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-      // var x = d3.scaleBand()
-      //   .rangeRound([0, width])
-      //   .padding(0.1);
-
-      // var y = d3.scaleLinear()
-      //   .rangeRound([height, 0]);
-
-      //   x.domain(data.map(function (d) {
-      //     return d.year;
-      //   }));
-      //   y.domain([0, d3.max(data, function (d) {
-      //     return Number(d.total);
-      //   })]);
-
-      //   g.append("g")
-      //     .attr("transform", "translate(0," + height + ")")
-      //     .call(d3.axisBottom(x))
-
-      //   g.append("g")
-      //     .call(d3.axisLeft(y))
-      //     .append("text")
-      //     .attr("fill", "#123")
-      //     .attr("transform", "rotate(-90)")
-      //     .attr("y", 6)
-      //     .attr("dy", "0.71em")
-      //     .attr("text-anchor", "end")
-      //     .text("Total");
-
-      //   g.selectAll(".bar")
-      //     .data(data)
-      //     .enter().append("rect")
-      //     .attr("class", "bar")
-      //     .attr("x", function (d) {
-      //       return x(d.year);
-      //     })
-      //     .attr("y", function (d) {
-      //       return y(Number(d.total));
-      //     })
-      //     .attr("width", x.bandwidth())
-      //     .attr("height", function (d) {
-      //       return height - y(Number(d.total));
-      //     });
     });
   }
 }

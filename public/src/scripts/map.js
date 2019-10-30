@@ -56,12 +56,10 @@ export function renderMap(allCountryData) {
         .drag()
         .subject(function() {
           var r = projection.rotate();
-          console.log(r);
           return { x: r[0] / sens, y: -r[1] / sens };
         })
         .on("start", dragStarted)
         .on("drag", function() {
-          console.log("drag function");
           var rotate = projection.rotate();
           projection.rotate([d3.event.x * sens, -d3.event.y * sens, rotate[2]]);
           globe.selectAll("path").attr("d", path);
@@ -93,12 +91,10 @@ export function renderMap(allCountryData) {
           .drag()
           .subject(function() {
             var r = projection.rotate();
-            console.log(r);
             return { x: r[0] / sens, y: -r[1] / sens };
           })
           .on("start", dragStarted)
           .on("drag", function() {
-            console.log("drag function");
             var rotate = projection.rotate();
             projection.rotate([
               d3.event.x * sens,
@@ -115,7 +111,6 @@ export function renderMap(allCountryData) {
       });
   });
   function dragStarted() {
-    console.log("drag function");
     stopGlobe();
   }
   function dragEnded() {

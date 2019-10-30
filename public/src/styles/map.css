@@ -113,3 +113,8 @@ body {
 .bold {
   font-weight: bold;
 }
+
+#dates-chart {
+  width: 95%;
+  height: 95%;
+}
