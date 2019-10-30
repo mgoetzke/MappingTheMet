@@ -50,8 +50,24 @@ export function renderMap(allCountryData) {
     .datum({ type: "Sphere" })
     .attr("class", "water")
     .style("fill", "lightblue")
-    .attr("d", path);
-
+    .attr("d", path)
+    .call(
+      d3
+        .drag()
+        .subject(function() {
+          var r = projection.rotate();
+          console.log(r);
+          return { x: r[0] / sens, y: -r[1] / sens };
+        })
+        .on("start", dragStarted)
+        .on("drag", function() {
+          console.log("drag function");
+          var rotate = projection.rotate();
+          projection.rotate([d3.event.x * sens, -d3.event.y * sens, rotate[2]]);
+          globe.selectAll("path").attr("d", path);
+        })
+        .on("end", dragEnded)
+    );
   var g = globe.append("g").attr("class", "countries");
 
   var path = d3.geoPath().projection(projection);
