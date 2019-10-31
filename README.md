@@ -12,6 +12,7 @@
 - DS.js for data visualization
 - External API (The Metropolitan Museum of Art Collection API) for data source
 - Webpack and Babel to bundle files
+- Express.js for building out API calls
 
 ## Features
 
@@ -29,6 +30,31 @@
 
 ![alt text](https://media.giphy.com/media/Sw7MVx2imq6kh1fLXV/giphy.gif "Mapping the Met Country Breakdown")
 
+- Fetch collection information for all countries before rendering (using Express.js)
+*./app.js*
+```JavaScript
+app.get("/objects/", (request, response) => {
+  let promises = countries.map(country => {
+    let result = { country: "", id: 0, total: 0 };
+    return fetch(
+      `https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${country.name}&q=*`
+    )
+      .then(response => {
+        return response.text();
+      })
+      .then(body => {
+        let results = JSON.parse(body);
+        result.country = country.name;
+        result.id = country.id;
+        result.total = results.total;
+        return result;
+      });
+  });
+  Promise.all(promises).then(data => {
+    response.send(data);
+  });
+});
+```
 ## Data & APIs
 
 Artwork information is available for free through The Metropolitan Museum of Art Collection API which provides information on 450,000 of the museum's two million artworks.
