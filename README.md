@@ -31,6 +31,7 @@
 ![alt text](https://media.giphy.com/media/Sw7MVx2imq6kh1fLXV/giphy.gif "Mapping the Met Country Breakdown")
 
 - Fetch collection information for all countries before rendering (using Express.js)
+
 *./app.js*
 ```JavaScript
 app.get("/objects/", (request, response) => {
