@@ -7,9 +7,10 @@ body {
   font-family: "Yanone Kaffeesatz", sans-serif;
   font-weight: 200;
   font-size: 17px;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .header {
   display: flex;
@@ -17,7 +18,6 @@ body {
   padding: 10px;
   padding-left: 40px;
   background-color: rgb(57, 0, 111);
-  margin-bottom: 50px;
   color: RGB(255, 255, 255);
 }
 .header-icons {
@@ -26,13 +26,14 @@ body {
 }
 .main-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
   justify-content: space-evenly;
   height: 100%;
   align-items: center;
 }
 #map-holder {
+  margin-top: 50px;
   display: flex;
   width: 600px;
   height: 500px;
@@ -45,9 +46,9 @@ body {
   border: 3px solid black;
   box-sizing: border-box;
   padding: 25px;
+  margin-top: 50px;
   height: 500px;
   width: 600px;
-  margin-right: 60px;
 }
 #details-holder {
   width: 100%;

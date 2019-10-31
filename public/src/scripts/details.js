@@ -98,7 +98,7 @@ export function renderDetails(prompt) {
           ]
         },
         options: {
-          responsive: false,
+          responsive: true,
           scales: {
             yAxes: [
               {
