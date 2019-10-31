@@ -31,6 +31,7 @@ body {
   justify-content: space-evenly;
   height: 100%;
   align-items: center;
+  padding: 20px;
 }
 #map-holder {
   margin-top: 50px;
@@ -49,7 +50,6 @@ body {
   box-sizing: border-box;
   padding: 25px;
   margin-top: 50px;
-  margin-right: 50px;
   height: 500px;
   min-width: 400px;
   max-width: 600px;
