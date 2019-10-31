@@ -39,7 +39,7 @@ export function renderDetails(prompt) {
       .html(`</br>`)
       .append("p")
       .html(
-        `<span class="bold">Click</span> around the globe to explore where the artwork comes from.`
+        `<span class="bold">Click</span> or <span class="bold">drag</span> around the globe to explore where the artwork comes from.`
       );
   } else {
     let details;
