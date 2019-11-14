@@ -48,7 +48,7 @@ export function renderMap(allCountryData) {
     .append("path")
     .datum({ type: "Sphere" })
     .attr("class", "water")
-    .style("fill", "lightblue")
+    .style("fill", "#7AD1FF")
     .attr("d", path)
     .call(
       d3
